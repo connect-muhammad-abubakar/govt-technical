@@ -1,0 +1,419 @@
+/* =====================
+   Theme Variables
+===================== */
+:root {
+  /* Light Theme */
+  --bg-color: #bebebe;
+  --text-color: #212121;
+  --card-bg: #ffffff;
+  --heading-color: #212121;
+   --wm-mask: rgba(255,255,255,0.70);
+  --primary-green: #1B5E20;
+  --primary-blue: #1565C0;
+  --primary-button: #388E3C;
+  --secondary-button: #C5A46D;
+  --link-hover: #000000;
+    --underline-color: #1565C0; 
+  --navbar-bg: #cacaca;
+   --wm-top-offset: 50px;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #EDEDED;
+  --card-bg: #1E1E1E;
+  --heading-color: #C5A46D;
+     --underline-color: #C5A46D; 
+  --navbar-bg: #1E1E1E;
+  --link-hover: #cec7ba;
+  --wm-mask: rgba(0,0,0,0.80);  
+}
+
+/* =====================
+   Global Styles
+===================== */
+/* Base body (theme colors) */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  /* Layered background: gradient (mask) + logo */
+  background-image:
+    linear-gradient(var(--wm-mask), var(--wm-mask)),
+    url("img/logo.png");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-position: center var(--wm-top-offset), center var(--wm-top-offset);
+  background-size: cover, 600px 600px; /* Bigger and symmetric logo */
+}
+
+/* Smaller offset for mobile/tablet */
+@media (max-width: 991.98px) {
+  :root { --wm-top-offset: 70px; }
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;   /* keeps it above all content */
+}
+
+.navbar-brand {
+  color: var(--text-color) !important;
+  font-size: 1.9rem;  
+  font-weight: 600;   
+}
+
+
+.navbar .nav-link {
+  color: var(--text-color) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--link-hover) !important;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: var(--primary-button);
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: var(--primary-green);
+}
+
+.btn-outline-success {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--primary-green);
+  color: #fff;
+}
+/* Navbar links */
+.navbar .nav-link {
+  font-size: 1.15rem;       /* slightly bigger */
+  font-weight: 500;
+  padding: 8px 14px;
+  margin: 0 10px;           /* add horizontal spacing */
+  position: relative;     
+  transition: color 0.3s ease;
+}
+
+/* Underline effect */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;              /* keep a bit below text */
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-blue); /* underline in light mode */
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dark mode underline */
+body.dark-mode .navbar .nav-link::after {
+  background-color: var(--secondary-button); /* ash golden underline */
+}
+
+/* Hover colors */
+.navbar .nav-link:hover {
+  color: var(--link-hover) !important;
+}
+
+body.dark-mode .navbar .nav-link:hover {
+  color: var(--secondary-button) !important; /* ash golden in dark mode */
+}
+
+/* Default hamburger icon color (light mode) */
+.navbar-toggler {
+  border: none; /* optional: remove border */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Dark mode hamburger icon (make it white/golden) */
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* Mobile menu spacing */
+@media (max-width: 991px) {
+  .navbar-collapse .nav-link {
+    margin: 6px 0; /* vertical space between all items */
+  }
+
+  /* Extra spacing between Language and Apply Now */
+  .navbar-collapse .nav-link.language-btn {
+    margin-bottom: 14px; /* add more gap before Apply Now */
+  }
+}
+/* Hero Section */
+.hero-img {
+  height: 65vh;        /* reduced from 85vh */
+  object-fit: cover;   /* keeps the image centered & cropped */
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    height: 45vh;      /* smaller on mobile */
+  }
+}
+#courses {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#courses h2 {
+  color: var(--heading-color);
+}
+
+#courses .section-desc {
+  color: var(--text-color);
+}
+
+.course-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.course-card h5 {
+  color: var(--heading-color);
+}
+
+.course-card p {
+  color: var(--text-color);
+}
+
+.course-card .btn {
+  background-color: var(--primary-button);
+  color: #fff;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.course-card .btn:hover {
+  background-color: var(--secondary-button);
+  transform: translateX(4px);
+}
+#courses {
+  padding: 3rem 1rem;
+}
+/* About & Updates Section */
+#about-updates {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#about-updates h2 {
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#about-updates p {
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px; /* keeps text nicely wrapped */
+  margin: 0 auto;
+}
+
+#about-updates .info-box {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+#about-updates .info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+#about-updates .btn {
+  background-color: var(--primary-button);
+  color: #fff;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#about-updates .btn:hover {
+  background-color: var(--secondary-button);
+  transform: translateX(4px);
+}
+#contact {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#contact h2,
+#contact label {
+  color: var(--heading-color);
+}
+
+#contact input, 
+#contact textarea {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#contact input:focus, 
+#contact textarea:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+#contact .btn {
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#contact .btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+#social-icons .social-icon {
+  font-size: 2.5rem;          /* Bigger icons */
+  padding: 12px;              /* Expands clickable area */
+  transition: color 0.3s, transform 0.2s;
+}
+
+body.light-mode #social-icons .social-icon {
+  color: var(--heading-color); /* Light mode */
+}
+
+body.dark-mode #social-icons .social-icon {
+  color: var(--heading-color); /* Ash-golden (dark mode) */
+}
+
+#social-icons .social-icon:hover {
+  transform: scale(1.3);  /* Bigger hover effect */
+}
+
+#social-icons .d-flex {
+  gap: 40px;   /* Increase spacing between icons */
+}
+/* 📱 Mobile adjustments */
+@media (max-width: 767.98px) {
+  #social-icons .social-icon {
+    font-size: 1.5rem;   /* Smaller icons */
+    padding: 6px;
+  }
+
+  #social-icons .d-flex {
+    gap: 20px;          /* Reduce spacing */
+    justify-content: center; /* Keep them centered */
+    flex-wrap: nowrap;       /* Force single row */
+  }
+}.footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer h4 {
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.sponsor-logos .sponsor-logo img {
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.sponsor-logos .sponsor-logo:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Dark / Light theming */
+body.light-mode .sponsor-logos .sponsor-logo img {
+  filter: none;
+}
+
+body.dark-mode .sponsor-logos .sponsor-logo img {
+  /* subtle brightness increase for dark mode if desired */
+  filter: brightness(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .sponsor-logos .sponsor-logo img {
+    height: 50px;
+  }
+}
+/* Remove section backgrounds */
+#courses,
+#about-updates,
+#contact,
+.footer {
+  background-color: transparent !important;
+}
+
+/* Keep headings and text readable */
+#courses h2,
+#about-updates h2,
+#contact h2,
+.footer h4 {
+  color: var(--heading-color);
+}
+
+#courses p,
+#about-updates p,
+#contact label,
+.footer {
+  color: var(--text-color);
+}
+.section-divider {
+  border: none;
+  height: 2px;
+  margin: 40px auto; /* space above/below */
+  width: 80%; /* not touching full edge */
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--heading-color),
+    transparent
+  );
+  opacity: 0.6;
+  transition: background 0.3s, opacity 0.3s;
+}
+
+/* Dark mode will auto change color because of --heading-color */
+body.dark-mode .section-divider {
+  opacity: 0.8;
+}
