@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTTI - Government Technical Training Institute</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body id="about">
+ <!-- Floating Chatbox -->
+  <div id="chatBoxWrapper">
+    <button id="chatBoxBtn" aria-label="Chat with us">💬</button>
+    <small class="chat-text" data-en="Ask & Know Now" data-ur="پوچھیں اور جانیں"></small>
+  </div>
+ 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-3">
+    <div class="container-fluid">
+
+      <!-- Left Side: Logo + GTTI -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="GTTI Logo" class="logo me-2">
+        <span class="fw-bold">GTTI</span>
+      </a>
+
+      <!-- Right Side: Theme Slider + Menu Button (mobile) -->
+      <div class="d-flex align-items-center">
+        <!-- Theme Slider -->
+        <div class="form-check form-switch me-3">
+          <input class="form-check-input" type="checkbox" id="themeSwitch">
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Navbar Items -->
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+  <ul class="navbar-nav ms-auto align-items-lg-center">
+    <li class="nav-item">
+      <a class="nav-link active" id="nav-home" href="index.html"
+         data-en="Home" data-ur="ہوم">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-about" href="about.html#about"
+         data-en="About Us" data-ur="ہمارے بارے میں">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-courses" href="#"
+         data-en="Courses" data-ur="کورسز">Courses</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-updates" href="about.html#updates"
+         data-en="Updates" data-ur="تازہ ترین">Updates</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-contact" href="#contact"
+         data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a>
+    </li>
+
+    <!-- Language Toggle -->
+    <li class="nav-item">
+      <button id="langToggle" type="button"
+              class="nav-link btn btn-sm btn-outline-success ms-lg-2 language-btn">
+        اردو
+      </button>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-success ms-3" id="nav-apply" href="#"
+         data-en="Apply Now" data-ur="اب اپلائی کریں">Apply Now</a>
+    </li>
+  </ul>
+</div>
+</div>
+</nav>
+
+<h2>Admission Form / داخلہ فارم</h2>
+
+<div class="form-container">
+  <!-- Personal Information -->
+  <div class="form-section">
+    <h3>Personal Information / ذاتی معلومات</h3>
+    <div class="form-group">
+      <label>Full Name / پورا نام *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Father Name / والد کا نام *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Gender / جنس *</label>
+      <select>
+        <option>Select / منتخب کریں</option>
+        <option>Male / مرد</option>
+        <option>Female / عورت</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>CNIC / Form-B *</label>
+      <input type="text" placeholder="xxxxx-xxxxxxx-x">
+    </div>
+    <div class="form-group">
+      <label>Date of Birth / تاریخ پیدائش *</label>
+      <input type="date">
+    </div>
+    <div class="form-group">
+      <label>Religion / مذہب *</label>
+      <select>
+        <option>Select / منتخب کریں</option>
+        <option>Islam / اسلام</option>
+        <option>Christian / عیسائی</option>
+        <option>Other / دیگر</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="form-section">
+    <h3>Contact Information / رابطے کی معلومات</h3>
+    <div class="form-group">
+      <label>Email / ای میل *</label>
+      <input type="email">
+    </div>
+    <div class="form-group">
+      <label>Mobile / موبائل *</label>
+      <input type="text" placeholder="03xx-xxxxxxx">
+    </div>
+    <div class="form-group">
+      <label>Phone (Landline) / فون نمبر</label>
+      <input type="text" placeholder="0xxx-xxxxxxx">
+    </div>
+    <div class="form-group">
+      <label>WhatsApp / واٹس ایپ *</label>
+      <input type="text" placeholder="03xx-xxxxxxx">
+    </div>
+    <div class="form-group">
+      <label>Address / پتہ *</label>
+      <textarea></textarea>
+    </div>
+  </div>
+
+  <!-- Guardian Info -->
+  <div class="form-section">
+    <h3>Father / Guardian Information / سرپرست کی معلومات</h3>
+    <div class="form-group">
+      <label>Guardian Name / سرپرست کا نام *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Relationship / رشتہ *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Occupation / پیشہ *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Mobile / موبائل *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Income / آمدنی</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <!-- Permanent Address -->
+  <div class="form-section">
+    <h3>Permanent Address / مستقل پتہ</h3>
+    <div class="form-group">
+      <label>Province / صوبہ *</label>
+      <select>
+        <option>Select / منتخب کریں</option>
+        <option>Punjab / پنجاب</option>
+        <option>Sindh / سندھ</option>
+        <option>KPK / خیبرپختونخوا</option>
+        <option>Balochistan / بلوچستان</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>District / ضلع *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>City / شہر *</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>Address / پتہ *</label>
+      <textarea></textarea>
+    </div>
+  </div>
+
+  <!-- Qualification -->
+  <div class="form-section">
+    <h3>Qualification / تعلیمی قابلیت</h3>
+    <div class="two-col">
+      <input type="text" placeholder="Level / درجے">
+      <input type="text" placeholder="Subjects / مضامین">
+    </div>
+    <div class="two-col">
+      <input type="text" placeholder="Board / بورڈ">
+      <input type="text" placeholder="Roll No / رول نمبر">
+    </div>
+    <div class="two-col">
+      <input type="text" placeholder="Passing Year / سال">
+      <input type="text" placeholder="Total Marks / کل نمبر">
+    </div>
+    <div class="two-col">
+      <input type="text" placeholder="Obtained Marks / حاصل کردہ نمبر">
+    </div>
+  </div>
+
+  <!-- Marks -->
+  <div class="form-section">
+    <h3>Marks for Merit / میرٹ نمبر</h3>
+    <div class="two-col">
+      <input type="text" placeholder="Chemistry / کیمسٹری">
+      <input type="text" placeholder="English / انگلش">
+    </div>
+    <div class="two-col">
+      <input type="text" placeholder="Math / ریاضی">
+      <input type="text" placeholder="Physics / فزکس">
+    </div>
+  </div>
+
+  <!-- Courses -->
+  <div class="form-section">
+    <h3>Select Course / کورس منتخب کریں</h3>
+    <div class="form-group">
+      <label>Choose Your Niche / شعبہ منتخب کریں *</label>
+      <select id="niche" onchange="updateCourses()">
+        <option>Select / منتخب کریں</option>
+        <option value="it">IT & Computer</option>
+        <option value="engineering">Engineering</option>
+        <option value="management">Management</option>
+        <option value="health">Health & Medical</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Choose Course / کورس منتخب کریں *</label>
+      <select id="course">
+        <option>Select a niche first / پہلے شعبہ منتخب کریں</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Others -->
+  <div class="form-section">
+    <h3>Others / دیگر</h3>
+    <div class="two-col">
+      <select>
+        <option>Admission Quota / داخلہ کوٹہ</option>
+      </select>
+      <select>
+        <option>Hostel Required / ہوسٹل درکار ہے؟</option>
+      </select>
+    </div>
+    <div class="two-col">
+      <select>
+        <option>Work Status / ملازمت کی حیثیت</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div class="buttons">
+  <button class="btn-back">Back / واپس</button>
+  <button class="btn-submit" style=" background: var(--secondary-button) !important;">Submit / جمع کرواٰئیں</button>
+</div>
+
+<!-- Divider -->
+<hr class="section-divider">
+  <!-- Footer -->
+<footer class="footer pt-5" style="background-color: var(--bs-gray-200); color: var(--text-color);">
+  <div class="container">
+    <!-- Main Footer Content -->
+    <div class="row g-4">
+      <!-- About -->
+      <div class="col-md-6 col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="brand-badge bg-success px-2 py-1 rounded">GTTI</span>
+          <span class="fw-semibold" data-en="Rahim Yar Khan" data-ur="رحیم یار خان"></span>
+        </div>
+        <p class="small" data-en="A public sector institute dedicated to high-quality technical and vocational training for the youth of South Punjab."
+           data-ur="ایک عوامی ادارہ جو جنوبی پنجاب کے نوجوانوں کے لیے معیاری تکنیکی اور ووکیشنل تربیت کے لیے وقف ہے۔">
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div class="col-md-6 col-lg-2">
+        <h6 class="text-uppercase small" data-en="Explore" data-ur="دریافت کریں"></h6>
+        <ul class="list-unstyled small">
+          <li><a href="#about" data-en="About" data-ur="ہمارے بارے میں" class="text-decoration-underline"></a></li>
+          <li><a href="#programs" data-en="Programs" data-ur="پروگرامز" class="text-decoration-underline"></a></li>
+          <li><a href="#admissions" data-en="Admissions" data-ur="داخلہ" class="text-decoration-underline"></a></li>
+          <li><a href="#notices" data-en="Notices" data-ur="نوٹس" class="text-decoration-underline"></a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="text-uppercase small" data-en="Resources" data-ur="وسائل"></h6>
+        <ul class="list-unstyled small">
+          <li><a href="#prospectus" data-en="Prospectus 2025 (PDF)" data-ur="پروسپیکٹس 2025 (PDF)" class="text-decoration-underline"></a></li>
+          <li><a href="#" data-en="Fee Structure" data-ur="فیس ڈھانچہ" class="text-decoration-underline"></a></li>
+          <li><a href="#" data-en="Scholarships" data-ur="اسکالرشپس" class="text-decoration-underline"></a></li>
+          <li><a href="#" data-en="Student Portal" data-ur="اسٹوڈنٹ پورٹل" class="text-decoration-underline"></a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="text-uppercase small" data-en="Contact" data-ur="رابطہ"></h6>
+        <ul class="list-unstyled small">
+          <li data-en="Thali Road, Rahim Yar Khan" data-ur="تھالی روڈ، رحیم یار خان"></li>
+          <li>+92 (0)68-XXXXXXX</li>
+          <li>
+            <a href="mailto:info@gtti-ryk.edu.pk"
+               data-en="info@gtti-ryk.edu.pk"
+               data-ur="info@gtti-ryk.edu.pk"
+               class="text-decoration-underline"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sponsors Section -->
+    <div class="text-center mt-5">
+      <h6 class="text-uppercase small mb-3" data-en="Our Sponsors" data-ur="ہمارے شراکت دار"></h6>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 sponsor-logos">
+        <a href="https://tevta.gop.pk/" target="_blank" class="sponsor-logo">
+          <img src="img/tavta.png" alt="TEVTA Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+        <a href="https://example.com/hazara" target="_blank" class="sponsor-logo">
+          <img src="img/hazara.png" alt="Hazara Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+        <a href="https://example.com/navtct" target="_blank" class="sponsor-logo">
+          <img src="img/navtct.png" alt="NAVTTC Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+        <a href="https://example.com/punjab" target="_blank" class="sponsor-logo">
+          <img src="img/punjab.png" alt="Punjab Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <hr class="border-secondary-subtle my-4" />
+    <div class="d-flex flex-wrap align-items-center justify-content-between pb-3">
+      <small data-en="© 2025 Govt. Technical Training Institute, Rahim Yar Khan. All rights reserved."
+             data-ur="© 2025 گورنمنٹ ٹیکنیکل ٹریننگ انسٹی ٹیوٹ، رحیم یار خان۔ جملہ حقوق محفوظ ہیں۔"></small>
+      <div class="d-flex gap-3">
+        <a href="#" data-en="Privacy" data-ur="رازداری" class="text-decoration-underline"></a>
+        <a href="#" data-en="Terms" data-ur="شرائط" class="text-decoration-underline"></a>
+        <a href="#" data-en="Contact" data-ur="رابطہ" class="text-decoration-underline"></a>
+        <!-- Scroll to Top Button -->
+<div id="scrollTopWrapper">
+  <button id="scrollTopBtn" aria-label="Scroll to top">
+    ↑
+  </button>
+  <small class="scroll-text" data-en="Back to top" data-ur="اوپر جائیں"></small>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+</footer>
+</div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

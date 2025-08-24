@@ -146,3 +146,33 @@ window.addEventListener("load", () => {
 });  
   }
 });
+   // Auto-fill course name from query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const course = urlParams.get('course');
+    if(course){
+      document.getElementById('course').value = course.replace("_", " ");
+    }
+    const courses = {
+    it: ["Web Development / ویب ڈویلپمنٹ", "Graphic Design / گرافک ڈیزائن", "Digital Marketing / ڈیجیٹل مارکیٹنگ", "Networking / نیٹ ورکنگ"],
+    engineering: ["Electrical / الیکٹریکل", "Mechanical / مکینیکل", "Civil / سول"],
+    management: ["Business Administration / بزنس ایڈمنسٹریشن", "Accounting / اکاؤنٹنگ", "HRM / ایچ آر ایم"],
+    health: ["Nursing / نرسنگ", "Pharmacy / فارمیسی", "Medical Lab Tech / میڈیکل لیب ٹیک"]
+  };
+
+  function updateCourses() {
+    const niche = document.getElementById("niche").value;
+    const courseSelect = document.getElementById("course");
+    courseSelect.innerHTML = "";
+
+    if (courses[niche]) {
+      courses[niche].forEach(course => {
+        const option = document.createElement("option");
+        option.textContent = course;
+        courseSelect.appendChild(option);
+      });
+    } else {
+      const option = document.createElement("option");
+      option.textContent = "Select a niche first / پہلے شعبہ منتخب کریں";
+      courseSelect.appendChild(option);
+    }
+  }
