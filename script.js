@@ -110,6 +110,16 @@ const scrollWrapper = document.getElementById("scrollTopWrapper");
     // You can replace with WhatsApp / Messenger / custom chat link
     // Example: window.open("https://wa.me/923001234567", "_blank");
   });
+  document.addEventListener("DOMContentLoaded", () => {
+  // Only apply zoom effect if we're on about page
+  if (document.body.id === "about") {
+    document.body.classList.add("page-transition");
+  }
+
+  // Splash screen / logo rotation (only on homepage)
+  if (document.body.id === "home") {
+  
+
 /* ------------------ SPLASH SCREEN ------------------ */
 window.addEventListener("load", () => {
   const splash = document.getElementById("splash-screen");
@@ -133,4 +143,6 @@ window.addEventListener("load", () => {
 
   logo.addEventListener("animationend", finish);
   setTimeout(finish, 5200); // fallback
+});  
+  }
 });

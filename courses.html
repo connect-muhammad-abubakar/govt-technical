@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTTI - Government Technical Training Institute</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body id="about">
+ <!-- Floating Chatbox -->
+  <div id="chatBoxWrapper">
+    <button id="chatBoxBtn" aria-label="Chat with us">💬</button>
+    <small class="chat-text" data-en="Ask & Know Now" data-ur="پوچھیں اور جانیں"></small>
+  </div>
+ 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-3">
+    <div class="container-fluid">
+
+      <!-- Left Side: Logo + GTTI -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="GTTI Logo" class="logo me-2">
+        <span class="fw-bold">GTTI</span>
+      </a>
+
+      <!-- Right Side: Theme Slider + Menu Button (mobile) -->
+      <div class="d-flex align-items-center">
+        <!-- Theme Slider -->
+        <div class="form-check form-switch me-3">
+          <input class="form-check-input" type="checkbox" id="themeSwitch">
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Navbar Items -->
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+  <ul class="navbar-nav ms-auto align-items-lg-center">
+    <li class="nav-item">
+      <a class="nav-link active" id="nav-home" href="index.html"
+         data-en="Home" data-ur="ہوم">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-about" href="about.html#about"
+         data-en="About Us" data-ur="ہمارے بارے میں">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-courses" href="#"
+         data-en="Courses" data-ur="کورسز">Courses</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-updates" href="about.html#updates"
+         data-en="Updates" data-ur="تازہ ترین">Updates</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="nav-contact" href="#contact"
+         data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a>
+    </li>
+
+    <!-- Language Toggle -->
+    <li class="nav-item">
+      <button id="langToggle" type="button"
+              class="nav-link btn btn-sm btn-outline-success ms-lg-2 language-btn">
+        اردو
+      </button>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-success ms-3" id="nav-apply" href="#"
+         data-en="Apply Now" data-ur="اب اپلائی کریں">Apply Now</a>
+    </li>
+  </ul>
+</div>
+</div>
+</nav>
+
+<section id="courses" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-3" data-en="Professional Courses to Shape Your Future" data-ur="پیشہ ورانہ کورسز جو آپ کے مستقبل کو سنوارتے ہیں"></h2>
+    <p class="section-desc text-center mb-5" data-en="Discover industry-driven training programs designed to give you hands-on skills and prepare you for real-world careers." data-ur="انڈسٹری پر مبنی تربیتی پروگرام دریافت کریں جو آپ کو عملی مہارتیں دے کر حقیقی دنیا کے کیریئر کے لیے تیار کرتے ہیں۔"></p>
+
+    <!-- Mechanical & Automotive -->
+    <h3 id="mechanical" class="niche-title">Mechanical & Automotive</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/car-engine.jpg" alt="Car Engine Mechanic" class="img-fluid mb-2">
+          <h5>Car Engine Mechanic</h5>
+          <p>Learn practical skills in engine repair and vehicle maintenance.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/motorcycle.jpg" alt="Motorcycle Mechanic" class="img-fluid mb-2">
+          <h5>Motorcycle Mechanic</h5>
+          <p>Hands-on training for motorcycle maintenance and repair.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/auto-electrician.jpg" alt="Auto Electrician" class="img-fluid mb-2">
+          <h5>Auto Electrician</h5>
+          <p>Electrical systems training for cars and vehicles.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/fitting.jpg" alt="Fitting & Welding" class="img-fluid mb-2">
+          <h5>Fitting & Welding</h5>
+          <p>Learn modern welding, cutting, and metal fitting skills.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/aluminium.jpg" alt="Aluminium Work" class="img-fluid mb-2">
+          <h5>Aluminium Work</h5>
+          <p>Fabrication and installation training for aluminium works.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+    </div>
+<!-- Divider -->
+<hr class="section-divider">
+    <!-- Electrical -->
+    <h3 id="electrical" class="niche-title">Electrical</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/electrician.jpg" alt="Electrician" class="img-fluid mb-2">
+          <h5>Electrician</h5>
+          <p>Hands-on training in wiring, electrical systems, and troubleshooting.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/3phase.jpg" alt="3 Phase Electrician" class="img-fluid mb-2">
+          <h5>3 Phase Electrician</h5>
+          <p>Training for three-phase electrical systems and installations.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/solar.jpg" alt="Solar Panel Installation" class="img-fluid mb-2">
+          <h5>Solar Panel Installation</h5>
+          <p>Learn solar technology, setup, and maintenance of solar systems.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+    </div>
+<!-- Divider -->
+<hr class="section-divider">
+    <!-- Civil & Architecture -->
+    <h3 id="artitecture" class="niche-title">Architecture & Civil</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/architecture.jpg" alt="Architecture" class="img-fluid mb-2">
+          <h5>Architecture</h5>
+          <p>Learn design, drafting, and construction planning skills.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/civil.jpg" alt="Civil" class="img-fluid mb-2">
+          <h5>Civil Work</h5>
+          <p>Practical training in construction and civil engineering basics.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/plumber.jpg" alt="Plumber" class="img-fluid mb-2">
+          <h5>Plumber</h5>
+          <p>Hands-on plumbing training for home and industrial work.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+    </div>
+<!-- Divider -->
+<hr class="section-divider">
+    <!-- IT & AI -->
+    <h3 id="it" class="niche-title">IT & Artificial Intelligence</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/computer-operator.jpg" alt="Computer Operator" class="img-fluid mb-2">
+          <h5>Computer Operator</h5>
+          <p>Basic IT skills including MS Office and computer operations.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/webdev.jpg" alt="Website Design & Development" class="img-fluid mb-2">
+          <h5>Website Design & Development</h5>
+          <p>Learn web design, HTML, CSS, JavaScript, and responsive layouts.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/ai.jpg" alt="Artificial Intelligence" class="img-fluid mb-2">
+          <h5>Artificial Intelligence</h5>
+          <p>Intro to AI concepts, machine learning, and practical AI projects.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+    </div>
+<!-- Divider -->
+<hr class="section-divider">
+    <!-- Life Skills -->
+    <h3 id="cooking" class="niche-title">Cooking & Life Skills</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/cooking.jpg" alt="Cooking" class="img-fluid mb-2">
+          <h5>Cooking</h5>
+          <p>Learn professional cooking skills from local to international dishes.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="course-card h-100 p-3">
+          <img src="img/car-driving.jpg" alt="Car Driving" class="img-fluid mb-2">
+          <h5>Car Driving</h5>
+          <p>Practical driving lessons and road safety training.</p>
+          <p><strong>Eligibility:</strong> 18+ & Matric Pass</p>
+          <p><strong>Time:</strong> 8am-2pm / 3pm-7pm | Duration: 1 year</p>
+           <a href="apply.html?course=car_engine" class="btn apply-btn">
+        <span data-en="Apply Now" data-ur="ابھی درخواست دیں"></span>
+      </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Divider -->
+<hr class="section-divider">
+
+<!--Contact us section -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4" 
+        data-en="Contact Us" 
+        data-ur="رابطہ کریں">Contact Us</h2>
+
+    <form class="contact-form">
+      <div class="row g-3">
+        <!-- Full Name -->
+        <div class="col-md-6 col-12">
+          <label for="fullName" class="form-label"
+                 data-en="Full Name" data-ur="پورا نام">Full Name</label>
+          <input type="text" id="fullName" class="form-control" required>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6 col-12">
+          <label for="email" class="form-label"
+                 data-en="Email" data-ur="ای میل">Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-md-6 col-12">
+          <label for="phone" class="form-label"
+                 data-en="Phone Number" data-ur="فون نمبر">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" required>
+        </div>
+
+        <!-- Radio -->
+        <div class="col-md-6 col-12">
+          <label class="form-label" data-en="I am a" data-ur="میں ہوں">I am a</label>
+          <div class="d-flex justify-content-between">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="role" id="student" value="student" checked>
+              <label class="form-check-label" for="student"
+                     data-en="Student" data-ur="طالب علم">Student</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="role" id="company" value="company">
+              <label class="form-check-label" for="company"
+                     data-en="Company" data-ur="کمپنی">Company</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="col-12">
+          <label for="message" class="form-label"
+                 data-en="Message" data-ur="پیغام">Message</label>
+          <textarea id="message" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="col-12 d-flex justify-content-between">
+          <!-- Open Map Modal -->
+          <button type="button" class="btn btn-outline-primary" 
+                  data-bs-toggle="modal" data-bs-target="#mapModal"
+                  data-en="Map" data-ur="نقشہ">Map</button>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-success"
+                  data-en="Send Now" data-ur="ابھی بھیجیں">Send Now</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!--  Bootstrap Modal for Map -->
+<div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" 
+            data-en="Our Location" data-ur="ہمارا مقام">Our Location</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Embedded Google Map -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.354203665716!2d70.301!3d28.420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394f96381f9f4ab3%3A0xabc123!2sGovt%20Technical%20Training%20Institute%20Rahim%20Yar%20Khan!5e0!3m2!1sen!2s!4v123456"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Divider -->
+<hr class="section-divider">
+
+
+<!--Social Links Sections-->
+<section id="social-icons" class="py-4">
+  <div class="container text-center">
+    <div class="d-flex justify-content-center gap-4">
+      <a href="tel:+923001234567" class="social-icon"><i class="bi bi-telephone-fill"></i></a>
+      <a href="mailto:info@gtti.edu.pk" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+      <a href="https://facebook.com/gtti" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+      <a href="https://instagram.com/gtti" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/company/gtti" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</section>
+<!-- Divider -->
+<hr class="section-divider">
+  <!-- Footer -->
+<footer class="footer pt-5" style="background-color: var(--bs-gray-200); color: var(--text-color);">
+  <div class="container">
+    <!-- Main Footer Content -->
+    <div class="row g-4">
+      <!-- About -->
+      <div class="col-md-6 col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="brand-badge bg-success px-2 py-1 rounded">GTTI</span>
+          <span class="fw-semibold" data-en="Rahim Yar Khan" data-ur="رحیم یار خان"></span>
+        </div>
+        <p class="small" data-en="A public sector institute dedicated to high-quality technical and vocational training for the youth of South Punjab."
+           data-ur="ایک عوامی ادارہ جو جنوبی پنجاب کے نوجوانوں کے لیے معیاری تکنیکی اور ووکیشنل تربیت کے لیے وقف ہے۔">
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div class="col-md-6 col-lg-2">
+        <h6 class="text-uppercase small" data-en="Explore" data-ur="دریافت کریں"></h6>
+        <ul class="list-unstyled small">
+          <li><a href="#about" data-en="About" data-ur="ہمارے بارے میں" class="text-decoration-underline"></a></li>
+          <li><a href="#programs" data-en="Programs" data-ur="پروگرامز" class="text-decoration-underline"></a></li>
+          <li><a href="#admissions" data-en="Admissions" data-ur="داخلہ" class="text-decoration-underline"></a></li>
+          <li><a href="#notices" data-en="Notices" data-ur="نوٹس" class="text-decoration-underline"></a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="text-uppercase small" data-en="Resources" data-ur="وسائل"></h6>
+        <ul class="list-unstyled small">
+          <li><a href="#prospectus" data-en="Prospectus 2025 (PDF)" data-ur="پروسپیکٹس 2025 (PDF)" class="text-decoration-underline"></a></li>
+          <li><a href="#" data-en="Fee Structure" data-ur="فیس ڈھانچہ" class="text-decoration-underline"></a></li>
+          <li><a href="#" data-en="Scholarships" data-ur="اسکالرشپس" class="text-decoration-underline"></a></li>
+          <li><a href="#" data-en="Student Portal" data-ur="اسٹوڈنٹ پورٹل" class="text-decoration-underline"></a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="text-uppercase small" data-en="Contact" data-ur="رابطہ"></h6>
+        <ul class="list-unstyled small">
+          <li data-en="Thali Road, Rahim Yar Khan" data-ur="تھالی روڈ، رحیم یار خان"></li>
+          <li>+92 (0)68-XXXXXXX</li>
+          <li>
+            <a href="mailto:info@gtti-ryk.edu.pk"
+               data-en="info@gtti-ryk.edu.pk"
+               data-ur="info@gtti-ryk.edu.pk"
+               class="text-decoration-underline"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sponsors Section -->
+    <div class="text-center mt-5">
+      <h6 class="text-uppercase small mb-3" data-en="Our Sponsors" data-ur="ہمارے شراکت دار"></h6>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 sponsor-logos">
+        <a href="https://tevta.gop.pk/" target="_blank" class="sponsor-logo">
+          <img src="img/tavta.png" alt="TEVTA Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+        <a href="https://example.com/hazara" target="_blank" class="sponsor-logo">
+          <img src="img/hazara.png" alt="Hazara Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+        <a href="https://example.com/navtct" target="_blank" class="sponsor-logo">
+          <img src="img/navtct.png" alt="NAVTTC Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+        <a href="https://example.com/punjab" target="_blank" class="sponsor-logo">
+          <img src="img/punjab.png" alt="Punjab Logo" class="img-fluid" style="max-height:50px;">
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <hr class="border-secondary-subtle my-4" />
+    <div class="d-flex flex-wrap align-items-center justify-content-between pb-3">
+      <small data-en="© 2025 Govt. Technical Training Institute, Rahim Yar Khan. All rights reserved."
+             data-ur="© 2025 گورنمنٹ ٹیکنیکل ٹریننگ انسٹی ٹیوٹ، رحیم یار خان۔ جملہ حقوق محفوظ ہیں۔"></small>
+      <div class="d-flex gap-3">
+        <a href="#" data-en="Privacy" data-ur="رازداری" class="text-decoration-underline"></a>
+        <a href="#" data-en="Terms" data-ur="شرائط" class="text-decoration-underline"></a>
+        <a href="#" data-en="Contact" data-ur="رابطہ" class="text-decoration-underline"></a>
+        <!-- Scroll to Top Button -->
+<div id="scrollTopWrapper">
+  <button id="scrollTopBtn" aria-label="Scroll to top">
+    ↑
+  </button>
+  <small class="scroll-text" data-en="Back to top" data-ur="اوپر جائیں"></small>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+</footer>
+</div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
