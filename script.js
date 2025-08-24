@@ -30,21 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const navApply   = document.getElementById("nav-apply");
 
   function applyTranslations(lang) {
-    // Update bilingual elements everywhere (courses, cards, etc.)
     document.querySelectorAll("[data-en]").forEach(el => {
       const val = el.dataset[lang];
       if (typeof val !== "undefined") el.textContent = val;
     });
-
-    // Set correct dir & lang
     document.documentElement.setAttribute("lang", lang);
     document.documentElement.setAttribute("dir", lang === "ur" ? "rtl" : "ltr");
   }
 
   function setLanguage(lang) {
     currentLang = lang;
-
-    // Navbar
     if (navHome)    navHome.textContent    = translations[lang].home;
     if (navAbout)   navAbout.textContent   = translations[lang].about;
     if (navCourses) navCourses.textContent = translations[lang].courses;
@@ -52,10 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (navApply)   navApply.textContent   = translations[lang].apply;
     if (langBtn)    langBtn.textContent    = translations[lang].langBtn;
 
-    // Courses + other bilingual content
     applyTranslations(lang);
-
-    // Update banners too
     updateBannerLanguage(lang);
   }
 
@@ -84,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Auto-slide
   if (banners.length) {
     showBanner(0);
     setInterval(() => {
@@ -96,20 +87,50 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init language
   setLanguage("en");
 });
-function switchLanguage(lang) {
-  document.querySelectorAll("[data-en]").forEach(el => {
-    if (lang === "ur") {
-      el.textContent = el.getAttribute("data-ur");
+const scrollWrapper = document.getElementById("scrollTopWrapper");
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  // Show when scrolling down
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollWrapper.classList.add("show");
     } else {
-      el.textContent = el.getAttribute("data-en");
+      scrollWrapper.classList.remove("show");
     }
   });
-}
 
-// Example buttons for language toggle
-document.getElementById("lang-en").addEventListener("click", () => switchLanguage("en"));
-document.getElementById("lang-ur").addEventListener("click", () => switchLanguage("ur"));
-// Within your existing DOMContentLoaded / setLanguage() logic:
-applyTranslations(lang); // Will update the h4 and paragraph
+  // Smooth scroll to top
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  const chatBtn = document.getElementById("chatBoxBtn");
 
-// Make sure the footer elements have data-en and data-ur as shown above.
+  chatBtn.addEventListener("click", () => {
+    alert("Chat feature coming soon! 🚀");
+    // You can replace with WhatsApp / Messenger / custom chat link
+    // Example: window.open("https://wa.me/923001234567", "_blank");
+  });
+/* ------------------ SPLASH SCREEN ------------------ */
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash-screen");
+  const main   = document.getElementById("main-content");
+  const logo   = document.getElementById("splash-logo");
+
+  // Darken background after a short delay
+  setTimeout(() => {
+    splash.style.background = "#121212";
+  }, 1200);
+
+  // Finish animation: hide splash, show main
+  const finish = () => {
+    splash.style.transition = "opacity 0.9s ease";
+    splash.style.opacity = "0";
+    setTimeout(() => {
+      splash.style.display = "none";
+      main.classList.add("show");
+    }, 900);
+  };
+
+  logo.addEventListener("animationend", finish);
+  setTimeout(finish, 5200); // fallback
+});

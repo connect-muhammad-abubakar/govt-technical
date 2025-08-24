@@ -28,6 +28,42 @@ body.dark-mode {
   --link-hover: #cec7ba;
   --wm-mask: rgba(0,0,0,0.80);  
 }
+/* Splash Screen */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  background: #fff;               /* start white */
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  transition: background 1s ease-in-out; /* ⬅️ shorter fade */
+  overflow: hidden;
+  perspective: 900px;
+}
+
+#splash-logo {
+  width: 150px;
+  animation: rotateZoom 3s ease-in-out forwards; /* ⬅️ faster rotation */
+  transform-style: preserve-3d;
+}
+
+@keyframes rotateZoom {
+  0%   { transform: rotateX(0deg) rotateY(0deg) scale(1);   opacity: 1; }
+  30%  { transform: rotateX(0deg) rotateY(120deg) scale(1.2); }
+  60%  { transform: rotateX(0deg) rotateY(240deg) scale(1.6); }
+  100% { transform: rotateX(0deg) rotateY(360deg) scale(8); opacity: 0; }
+}
+
+/* Main content fades in (but is layout-ready) */
+#main-content {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* ⬅️ fade in quicker */
+}
+#main-content.show {
+  opacity: 1;
+}
+
+
 
 /* =====================
    Global Styles
@@ -305,27 +341,38 @@ body.dark-mode .navbar-toggler-icon {
   background-color: var(--card-bg);
   color: var(--text-color);
 }
+/* Social Icons Section */
+/* Social Section */
+#social-icons {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: none; /* 🚫 no background */
+}
+
+#social-icons h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-color); /* Matches current theme text */
+}
+
+#social-icons .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 #social-icons .social-icon {
-  font-size: 2.5rem;          /* Bigger icons */
-  padding: 12px;              /* Expands clickable area */
-  transition: color 0.3s, transform 0.2s;
-}
-
-body.light-mode #social-icons .social-icon {
-  color: var(--heading-color); /* Light mode */
-}
-
-body.dark-mode #social-icons .social-icon {
-  color: var(--heading-color); /* Ash-golden (dark mode) */
+  font-size: 1.8rem;
+  color: var(--text-color); /* Icons take text color */
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
 #social-icons .social-icon:hover {
-  transform: scale(1.3);  /* Bigger hover effect */
+  transform: scale(1.2);
+  color: var(--secondary-button); /* Highlight color on hover */
 }
 
-#social-icons .d-flex {
-  gap: 40px;   /* Increase spacing between icons */
-}
 /* 📱 Mobile adjustments */
 @media (max-width: 767.98px) {
   #social-icons .social-icon {
@@ -338,66 +385,54 @@ body.dark-mode #social-icons .social-icon {
     justify-content: center; /* Keep them centered */
     flex-wrap: nowrap;       /* Force single row */
   }
-}.footer {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+}
+/* Footer */
+.footer {
+  background-color: var(--navbar-bg) !important; /* Match navbar background */
+  color: var(--text-color) !important;          /* Use root text color */
 }
 
-.footer h4 {
-  color: var(--heading-color);
-  margin-bottom: 1rem;
+.footer a {
+  color: var(--text-color) !important;          /* Links follow text color */
+  text-decoration: underline !important;        /* Always underlined */
 }
 
-.sponsor-logos .sponsor-logo img {
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s, filter 0.3s;
+.footer a:hover {
+  color: var(--primary-green) !important;       /* Green hover */
+  text-decoration: underline !important;
 }
 
-.sponsor-logos .sponsor-logo:hover img {
+.footer h6,
+.footer .brand-badge,
+.footer small,
+.footer p,
+.footer li {
+  color: var(--text-color) !important;          /* All footer text follows theme */
+}
+
+.brand-badge {
+  font-weight: bold;
+  background-color: var(--primary-green);
+  color: #fff !important; /* Badge text fixed white */
+}
+
+/* Sponsors */
+.sponsor-logos img {
+  transition: transform 0.3s ease;
+  filter: none !important; /* keep natural logo colors */
+}
+
+.sponsor-logos img:hover {
   transform: scale(1.1);
-  filter: brightness(1.2);
 }
 
-/* Dark / Light theming */
-body.light-mode .sponsor-logos .sponsor-logo img {
-  filter: none;
-}
-
-body.dark-mode .sponsor-logos .sponsor-logo img {
-  /* subtle brightness increase for dark mode if desired */
-  filter: brightness(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-  .sponsor-logos .sponsor-logo img {
-    height: 50px;
-  }
-}
-/* Remove section backgrounds */
+/* Remove transparent override for footer */
 #courses,
 #about-updates,
-#contact,
-.footer {
+#contact {
   background-color: transparent !important;
 }
 
-/* Keep headings and text readable */
-#courses h2,
-#about-updates h2,
-#contact h2,
-.footer h4 {
-  color: var(--heading-color);
-}
-
-#courses p,
-#about-updates p,
-#contact label,
-.footer {
-  color: var(--text-color);
-}
 .section-divider {
   border: none;
   height: 2px;
@@ -416,4 +451,113 @@ body.dark-mode .sponsor-logos .sponsor-logo img {
 /* Dark mode will auto change color because of --heading-color */
 body.dark-mode .section-divider {
   opacity: 0.8;
+}
+/* Video thumbnails */
+.video-thumb {
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-thumb img {
+  border-radius: 12px;
+}
+
+.video-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+/* Wrapper for button + text */
+#scrollTopWrapper {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show state */
+#scrollTopWrapper.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Button styling */
+#scrollTopBtn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--text-color);
+  color: var(--bg-color);
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  background: var(--accent-color, #198754);
+  color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+/* Text under button */
+.scroll-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--text-color);
+}
+/* Chatbox wrapper */
+#chatBoxWrapper {
+  position: fixed;
+  top: 100px;       /* 100px from top */
+  left: 25px;       /* now on left side */
+  text-align: center;
+  z-index: 999;
+}
+
+/* Chatbox button */
+#chatBoxBtn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--text-color);
+  color: var(--bs-gray-200);
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#chatBoxBtn:hover {
+  background: var(--accent-color, #198754);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Label under chat button */
+.chat-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+/* Responsive: smaller button on small screens */
+@media (max-width: 576px) {
+  #chatBoxBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .chat-text {
+    font-size: 11px;
+  }
 }
