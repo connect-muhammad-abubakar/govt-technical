@@ -277,6 +277,114 @@
   <button class="btn-back">Back / واپس</button>
   <button class="btn-submit" style=" background: var(--secondary-button) !important;">Submit / جمع کرواٰئیں</button>
 </div>
+<!-- Divider -->
+<hr class="section-divider">
+
+<!--Contact us section -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4" 
+        data-en="Contact Us" 
+        data-ur="رابطہ کریں">Contact Us</h2>
+
+    <form class="contact-form">
+      <div class="row g-3">
+        <!-- Full Name -->
+        <div class="col-md-6 col-12">
+          <label for="fullName" class="form-label"
+                 data-en="Full Name" data-ur="پورا نام">Full Name</label>
+          <input type="text" id="fullName" class="form-control" required>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6 col-12">
+          <label for="email" class="form-label"
+                 data-en="Email" data-ur="ای میل">Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-md-6 col-12">
+          <label for="phone" class="form-label"
+                 data-en="Phone Number" data-ur="فون نمبر">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" required>
+        </div>
+
+        <!-- Radio -->
+        <div class="col-md-6 col-12">
+          <label class="form-label" data-en="I am a" data-ur="میں ہوں">I am a</label>
+          <div class="d-flex justify-content-between">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="role" id="student" value="student" checked>
+              <label class="form-check-label" for="student"
+                     data-en="Student" data-ur="طالب علم">Student</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="role" id="company" value="company">
+              <label class="form-check-label" for="company"
+                     data-en="Company" data-ur="کمپنی">Company</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="col-12">
+          <label for="message" class="form-label"
+                 data-en="Message" data-ur="پیغام">Message</label>
+          <textarea id="message" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="col-12 d-flex justify-content-between">
+          <!-- Open Map Modal -->
+          <button type="button" class="btn btn-outline-primary" 
+                  data-bs-toggle="modal" data-bs-target="#mapModal"
+                  data-en="Map" data-ur="نقشہ">Map</button>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-success"
+                  data-en="Send Now" data-ur="ابھی بھیجیں">Send Now</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!--  Bootstrap Modal for Map -->
+<div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" 
+            data-en="Our Location" data-ur="ہمارا مقام">Our Location</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Embedded Google Map -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.354203665716!2d70.301!3d28.420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394f96381f9f4ab3%3A0xabc123!2sGovt%20Technical%20Training%20Institute%20Rahim%20Yar%20Khan!5e0!3m2!1sen!2s!4v123456"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Divider -->
+<hr class="section-divider">
+
+
+<!--Social Links Sections-->
+<section id="social-icons" class="py-4">
+  <div class="container text-center">
+    <div class="d-flex justify-content-center gap-4">
+      <a href="tel:+923001234567" class="social-icon"><i class="bi bi-telephone-fill"></i></a>
+      <a href="mailto:info@gtti.edu.pk" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+      <a href="https://facebook.com/gtti" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+      <a href="https://instagram.com/gtti" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/company/gtti" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</section>
 
 <!-- Divider -->
 <hr class="section-divider">
